@@ -5,6 +5,7 @@
     * Date Started: Feb. 10, 2017
     * Date Last Updated: Feb. 10, 2017
     * Amount of time spent coding: 2 hours
+    * Github: https://github.com/masonziedonis/coding-challenges/tree/clover
     *
     * Description: This is my file for the initial coding challenge portion of Clover's intership interview process. I had two hours to complete the challenge.
     *
@@ -33,20 +34,40 @@ function generateCircle() {
         
         circle.style.left = (Math.random() * (circleContainer.offsetWidth - circleWidth)); // Puts the circle in a random X-coordinate position on the screen
         circle.style.top = (Math.random() * (circleContainer.offsetHeight - circleHeight)); // Puts the circle in a random Y-coordinate position on the screen
-        console.log(circleContainer.offsetWidth);
-        console.log(circle.offsetWidth);
         
         circle.innerHTML += document.getElementById("circleText").value; // Assigns the the circle's text to be the value in the text box on the screen
 
         circleContainer.appendChild(circle); // Appends generated circle to the circle container
+        alertColorAndText(); // Updates the list of circles to be listening to
     }
 }
 
+// Removes all of the shapes on the screen
 function clearAll() {
     document.getElementById("clearAllCircles").onclick = function () {
         let circleContainer = document.getElementById("circleContainer"); // Gets the circle container element
         circleContainer.innerHTML = ""; // Clears all the circles from the screen
     }
+    alertColorAndText(); // Updates the list of circles to be listening to
+}
+
+// Clicking a shape alerts the user of the shape's color and text.
+function alertColorAndText() {
+    let circles = document.getElementsByClassName("circle"); // Gets the list of circles
+    Array.from(circles).forEach(function(circle) {
+        circle.addEventListener('click',function() {
+            let color = this.style.backgroundColor; // Retrieves the color of the circle
+            let text = this.textContent; // Retrieves the text of the circle
+            let textMessage = "";
+            if (text) {
+                textMessage = " and has a text value of '" + text + "'.";
+            } else {
+                textMessage = " and does not have any text."
+            } // Changes the message to display for text depending on if there is any text or not
+            let colorMessage = "The shape you clicked on has a RGB color value of " + color;
+            alert(colorMessage + textMessage); // Alerts the user the circle's color and text
+        }); // Alerts user of the color and text values of the circle that was clicked
+    }); // Adds a 'click' event listener to every circle
 }
 
 // Initializes relevant parent functions once page finishes loading
