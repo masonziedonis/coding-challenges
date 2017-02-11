@@ -75,18 +75,19 @@ function alertColorAndText() {
 function moveCircles() {
     let circles = document.getElementsByClassName("circle"); // Gets the list of circles
     Array.from(circles).forEach(function(circle) {
-        moveIndividualCircle(circle);
+        let velLeft = Math.floor(Math.random() * (50 + 50 + 1)) - 50;
+        let velTop = Math.floor(Math.random() * (50 + 50 + 1)) - 50;
+        moveIndividualCircle(circle, velLeft, velTop);
+        
     });
 }
 
-function moveIndividualCircle(circle) {
-    velLeft = circle.offsetLeft + Math.floor(Math.random() * (50 + 50 + 1)) - 50 + "px";
-    velTop = circle.offsetTop + Math.floor(Math.random() * (50 + 50 + 1)) - 50 + "px";
-    circle.style.left = velLeft;
-    circle.style.top  = velTop;
+function moveIndividualCircle(circle, velLeft, velTop) {
+    circle.style.left = circle.offsetLeft + velLeft + "px";
+    circle.style.top  = circle.offsetTop + velTop + "px";
     
     setTimeout(function(){
-         moveIndividualCircle(circle); 
+         moveIndividualCircle(circle, velLeft, velTop); 
      }, 10);
 }
 
