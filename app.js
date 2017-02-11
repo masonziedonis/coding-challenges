@@ -42,7 +42,15 @@ function generateCircle() {
     }
 }
 
+function clearAll() {
+    document.getElementById("clearAllCircles").onclick = function () {
+        let circleContainer = document.getElementById("circleContainer"); // Gets the circle container element
+        circleContainer.innerHTML = ""; // Clears all the circles from the screen
+    }
+}
+
 // Initializes relevant parent functions once page finishes loading
 window.onload = function() {
     generateCircle();
+    clearAll();
 };

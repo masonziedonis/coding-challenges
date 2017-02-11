@@ -11,6 +11,7 @@
     * Copyright (C) 2017 Mason Ziedonis 
 */
 
+/* Containers */
 html {
     height: 100%;
     width: 100%;
@@ -35,9 +36,10 @@ body {
 }
 
 
+/* Buttons */
 button {
     width: 20%;
-    margin: 1rem 40% 0 40%;
+    margin: 0 40%;
     padding: 15px;
     box-sizing: border-box;
     background-color: white;
@@ -45,9 +47,20 @@ button {
     color: #111;
     border-radius: 0;
 }
+#generateCircle {
+    background-color: darkgreen;
+    margin-top: 1rem;
+}
+#clearAllCircles {
+    background-color: darkred;
+    margin-top: 0;
+}
+
+/* Forms */
 form {
     text-align: center;
     padding: 1rem 0;
+    margin-bottom: 0;
 }
 form label {
     padding-right: 0.5rem;
@@ -57,6 +70,7 @@ form input {
     padding: 5px 0;
 }
 
+/* Objects */
 .circle {
     border-radius: 50%;
     position: absolute;
