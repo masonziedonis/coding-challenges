@@ -1,0 +1,64 @@
+/*!
+    * Author: Mason Ziedonis
+    * URL: www.masonziedonis.com
+    * Program Name: Clover Technical Challenge
+    * Date Started: Feb. 10, 2017
+    * Date Last Updated: Feb. 10, 2017
+    * Amount of time spent coding: 2 hours
+    *
+    * Description: This is my file for the initial coding challenge portion of Clover's intership interview process. I had two hours to complete the challenge.
+    *
+    * Copyright (C) 2017 Mason Ziedonis 
+*/
+
+html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #111;
+}
+body {    
+    height: 100%;
+    width:100%;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+#circleContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+button {
+    width: 20%;
+    margin: 1rem 40% 0 40%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid black;
+    color: #111;
+    border-radius: 0;
+}
+form {
+    text-align: center;
+    padding: 1rem 0;
+}
+form label {
+    padding-right: 0.5rem;
+}
+form input {
+    width: width: 40%;
+    padding: 5px 0;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+}
