@@ -39,6 +39,7 @@ function generateCircle() {
 
         circleContainer.appendChild(circle); // Appends generated circle to the circle container
         alertColorAndText(); // Updates the list of circles to be listening to
+        moveCircles();
     }
 }
 
@@ -47,6 +48,7 @@ function clearAll() {
     document.getElementById("clearAllCircles").onclick = function () {
         let circleContainer = document.getElementById("circleContainer"); // Gets the circle container element
         circleContainer.innerHTML = ""; // Clears all the circles from the screen
+        moveCircles();
     }
     alertColorAndText(); // Updates the list of circles to be listening to
 }
@@ -70,8 +72,27 @@ function alertColorAndText() {
     }); // Adds a 'click' event listener to every circle
 }
 
+function moveCircles() {
+    let circles = document.getElementsByClassName("circle"); // Gets the list of circles
+    Array.from(circles).forEach(function(circle) {
+        moveIndividualCircle(circle);
+    });
+}
+
+function moveIndividualCircle(circle) {
+    velLeft = circle.offsetLeft + Math.floor(Math.random() * (50 + 50 + 1)) - 50 + "px";
+    velTop = circle.offsetTop + Math.floor(Math.random() * (50 + 50 + 1)) - 50 + "px";
+    circle.style.left = velLeft;
+    circle.style.top  = velTop;
+    
+    setTimeout(function(){
+         moveIndividualCircle(circle); 
+     }, 10);
+}
+
 // Initializes relevant parent functions once page finishes loading
 window.onload = function() {
     generateCircle();
     clearAll();
+    moveCircles();
 };
