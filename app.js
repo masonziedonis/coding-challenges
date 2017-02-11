@@ -1,6 +1,6 @@
 /*!
     * Author: Mason Ziedonis
-    * URL: www.masonziedonis.com
+    * URL: www.masonziedonis.com/clover
     * Program Name: Clover Technical Challenge
     * Date Started: Feb. 10, 2017
     * Date Last Updated: Feb. 10, 2017
